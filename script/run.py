@@ -3,12 +3,14 @@ import sys
 import math
 import pprint
 
-import torch
+sys.path.append(p := os.path.dirname(os.path.dirname(__file__)))
+os.chdir(p)
+conda_path = "/home/mila/j/jianan.zhao/scratch/miniconda/envs/ct/bin/"
+os.environ['PATH'] = f'{conda_path}:{os.environ["PATH"]}'
 
+import torch
 from torchdrug import core
 from torchdrug.utils import comm
-
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from nbfnet import dataset, layer, model, task, util
 
 
